@@ -1,0 +1,274 @@
+/* Input Area Styles - Footer, input, quick messages, blocked panel, reply preview */
+
+.input-area {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(25px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 15px 16px 85px; /* Significantly increased bottom padding to lift the input UI much higher */
+}
+
+.input-wrapper {
+    display: flex;
+    gap: 8px;
+    align-items: flex-end;
+    position: relative;
+}
+
+.pin-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: all 0.2s;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    flex-shrink: 0;
+}
+
+.pin-btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+.pin-btn:active {
+    transform: scale(0.92);
+    background: linear-gradient(135deg, rgba(79, 172, 254, 0.2) 0%, rgba(0, 242, 254, 0.1) 100%);
+}
+
+.pin-btn.active {
+    background: linear-gradient(135deg, rgba(79, 172, 254, 0.25) 0%, rgba(0, 242, 254, 0.15) 100%);
+    border-color: rgba(79, 172, 254, 0.4);
+    color: rgba(79, 172, 254, 0.9);
+}
+
+#message-input {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 22px;
+    padding: 10px 16px;
+    color: #fff;
+    font-size: 15px;
+    font-family: inherit;
+    resize: none;
+    max-height: 120px;
+    outline: none;
+    /* Hide scrollbar for Chrome, Safari and Edge */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+#message-input::-webkit-scrollbar {
+    display: none;
+}
+
+.send-btn {
+    width: 44px;
+    height: 44px;
+    border: none;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(79, 172, 254, 0.4);
+    transition: transform 0.2s;
+}
+
+.send-btn:active { transform: scale(0.9); }
+
+/* Blocked Panel */
+.blocked-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    animation: fadeIn 0.5s ease;
+}
+
+.blocked-message {
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    direction: rtl;
+    line-height: 1.6;
+    color: #ff9a9e;
+    padding: 10px;
+}
+
+.countdown-container {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 16px;
+    padding: 12px;
+    text-align: center;
+}
+
+.countdown-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    opacity: 0.5;
+    letter-spacing: 1px;
+}
+
+.countdown-timer {
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    background: linear-gradient(to right, #fff, #a1c4fd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.final-note-trigger {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 16px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 15px;
+    box-shadow: 0 4px 20px rgba(118, 75, 162, 0.3);
+    margin-top: 8px;
+}
+
+/* Quick Messages System */
+.quick-messages-container {
+    padding: 0 16px 12px; /* Adjusted padding for better flow when visible */
+    animation: slideUp 0.3s ease;
+    display: none;
+}
+
+/* Ensure consistent spacing in blocked mode */
+.blocked-panel {
+    margin-top: 8px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 12px;
+}
+
+.quick-main-buttons {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    margin-bottom: 6px;
+}
+
+.quick-main-btn {
+    flex: 1;
+    padding: 8px 10px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 14px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: 'Noto Sans Arabic', sans-serif;
+    cursor: pointer;
+    transition: all 0.2s;
+    backdrop-filter: blur(10px);
+}
+
+.quick-main-btn:active {
+    transform: scale(0.95);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.08) 100%);
+}
+
+.quick-main-btn.active {
+    background: linear-gradient(135deg, rgba(79, 172, 254, 0.3) 0%, rgba(0, 242, 254, 0.2) 100%);
+    border-color: rgba(79, 172, 254, 0.5);
+}
+
+.quick-preset-panel {
+    animation: slideDown 0.3s ease;
+}
+
+.quick-preset-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    max-height: 180px;
+    overflow-y: auto;
+    padding: 8px 0;
+    /* Hide scrollbar */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.quick-preset-buttons::-webkit-scrollbar {
+    display: none;
+}
+
+.quick-preset-btn {
+    padding: 6px 12px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.04) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 12px;
+    font-weight: 500;
+    font-family: 'Noto Sans Arabic', sans-serif;
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+}
+
+.quick-preset-btn:active {
+    transform: scale(0.95);
+    background: linear-gradient(135deg, rgba(79, 172, 254, 0.25) 0%, rgba(0, 242, 254, 0.15) 100%);
+    border-color: rgba(79, 172, 254, 0.4);
+}
+
+/* Reply Preview Bar */
+.reply-preview-bar {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px 16px;
+    animation: slideUp 0.3s ease;
+}
+
+.reply-preview-content {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.reply-preview-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.reply-preview-label {
+    font-size: 11px;
+    opacity: 0.6;
+    margin-bottom: 3px;
+}
+
+.reply-preview-message {
+    font-size: 13px;
+    opacity: 0.8;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.reply-preview-close {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
