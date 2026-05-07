@@ -143,7 +143,7 @@ window.firebaseUploadAndSendMedia = async function (mediaType, dataUrl, fileName
         if (onProgress) onProgress(100);
 
         const msg = {
-            id: Date.now() + Math.random(),
+            id: String(Date.now()) + String(Math.random()).slice(2),
             sender: currentSender,
             text: caption || '',
             timestamp: Date.now(),
@@ -199,7 +199,7 @@ window.firebaseUploadGallery = async function (imageDataArray, caption, onProgre
         }
 
         const msg = {
-            id: Date.now() + Math.random(),
+            id: String(Date.now()) + String(Math.random()).slice(2),
             sender: currentSender,
             text: caption || '',
             timestamp: Date.now(),
